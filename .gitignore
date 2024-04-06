@@ -1,0 +1,19 @@
+# Dependency directories
+node_modules/
+
+# Cache directories
+.cache/
+dist/
+
+# IDE files
+.vscode/
+.idea/
+
+# Log files
+npm-debug.log*
+
+# Environment variables file
+.env.local
+
+# Build output
+build/
