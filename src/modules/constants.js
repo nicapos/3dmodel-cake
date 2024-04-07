@@ -5,7 +5,10 @@ export const mesh = {
     bottom: "Material"
   },
   frosting: "Material.004", // TODO: Verify mesh name
-  candle: "Material.005", // TODO: Verify mesh name
+  candle: {
+    wax: "Material.005", // TODO: Verify mesh name
+    wick: "Material.006", // TODO: Verify mesh name
+  },
   base: {
     top: "Material.003", // TODO: Verify mesh name
     bottom: "Material.001", // TODO: Verify mesh name
