@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { mesh } from '../modules/constants';
 
 // Create scene
 const scene = new THREE.Scene();
@@ -37,9 +38,7 @@ const onResourceLoad = (gltf) => {
   gltf.scene.traverse(function (child) {
       if (child.isMesh) {
           // Check if the mesh has a specific material name or any other condition
-          const topLayerIcingMesh = 'Material.002';
-          const bottomLayerIcingMesh = 'Material';
-          if (child.material.name == topLayerIcingMesh || child.material.name == bottomLayerIcingMesh) {
+          if (child.material.name == mesh.icing.top || child.material.name == mesh.icing.bottom) {
               // child.material.color.set(0xff0000);
               child.material.metalness = 0.3;
           }

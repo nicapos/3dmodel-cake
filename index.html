@@ -10,9 +10,31 @@
 	<body>
 		<!-- Add main script for three.js -->
 		<script type="module" src="/src/main.js"></script>
-		
+
+		<!-- Add module scripts -->
+		<script type="module" src="/src/modules/color-change.js"></script>
+
+		<!-- Add TailwindCSS classes -->
+		<script src="https://cdn.tailwindcss.com"></script>
 
 		<!-- Add container for 3d model -->
 		<div id="threejs-container" class="w-full h-full"></div>
+
+		<div class="fixed top-2 right-2 z-100 flex flex-col items-end">
+			<img src="/color-wheel.svg" class="w-10 h-10" />
+			<div class="border border-[#012622] text-[#012622] gap-x-2 px-4 py-2 bg-white grid grid-cols-[150px_auto] items-center font-mono text-sm">
+				<label for="icing-color">Icing color</label>
+				<input id="icing-color" type="color" />
+
+				<label for="frosting-color">Frosting color</label>
+				<input id="frosting-color" type="color" />
+
+				<label for="candle-color">Candle wax color</label>
+				<input id="candle-color" type="color" />
+
+				<label for="base-color">Base cake color</label>
+				<input id="base-color" type="color" />
+			</div>
+		</div>
 	</body>
 </html>
