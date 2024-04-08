@@ -45,7 +45,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
       }
       console.log(amp);
 
-      if (amp > 2700) {
+      if (amp > 1900) {
         console.log("Blow candle")
         handleBlowCandle();
       }
