@@ -45,7 +45,7 @@ scene.add( spotLight );
 // Instantiate a loader
 const loader = new GLTFLoader();
 
-const resourceURL = "src/assets/cake2tired.glb";
+const resourceURL = "/assets/cake2tired.glb";
 const onResourceLoad = (gltf) => {
   console.log(gltf);
   gltf.scene.traverse(function (child) {
