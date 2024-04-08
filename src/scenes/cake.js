@@ -25,6 +25,7 @@ pointLight.name = "candleLight";
 pointLight.castShadow = true;
 scene.add(pointLight);
 
+// Add spotlight
 const spotLight = new THREE.SpotLight( 0xff8888, 100 );
 spotLight.angle = Math.PI / -4;
 spotLight.penumbra = 0.3;
@@ -49,6 +50,27 @@ const baseMesh = new THREE.Mesh(baseCylinder, baseMaterial);
 baseMesh.position.y = -0.6;
 scene.add(baseMesh);
 
+// Load the image texture
+const textureLoader = new THREE.TextureLoader();
+const texture = textureLoader.load('/fabric.jpeg');
+
+/// Create the shape for the rectangle
+const shape = new THREE.Shape();
+shape.moveTo(-3, -3);
+shape.lineTo(3, -3);
+shape.lineTo(3, 3);
+shape.lineTo(-3, 3);
+shape.lineTo(-3, -3);
+
+const extrudeSettings = { depth: 0.1, bevelEnabled: false };
+const geometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
+geometry.rotateX(Math.PI / 2);
+
+const material = new THREE.MeshBasicMaterial({ map: texture });
+const rectangle = new THREE.Mesh(geometry, material);
+rectangle.position.set(0, -0.7, 0);
+scene.add(rectangle);
+
 // Instantiate a loader
 const loader = new GLTFLoader();
 
@@ -59,7 +81,7 @@ const onResourceLoad = (gltf) => {
       if (child.isMesh) {
           // Check if the mesh has a specific material name or any other condition
           if (child.material.name == mesh.icing.top || child.material.name == mesh.icing.bottom) {
-              child.material.metalness = 0.4;
+              child.material.metalness = 0.3;
           }
       }
   });
