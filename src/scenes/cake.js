@@ -53,6 +53,7 @@ scene.add(baseMesh);
 // Load the image texture
 const textureLoader = new THREE.TextureLoader();
 const texture = textureLoader.load('/fabric.jpeg');
+texture.repeat.set(1, 1);
 
 /// Create the shape for the rectangle
 const shape = new THREE.Shape();
