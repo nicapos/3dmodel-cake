@@ -14,15 +14,23 @@
 		<!-- Add module scripts -->
 		<script type="module" src="/src/modules/color-change.js"></script>
 		<script type="module" src="/src/modules/monitor-audio.js"></script>
+		<script type="module" src="/src/modules/play-audio.js"></script>
 
 		<!-- Add TailwindCSS classes -->
 		<script src="https://cdn.tailwindcss.com"></script>
+
+		<!-- Add youtube audio stream -->
+		<script src="https://cdn.jsdelivr.net/npm/youtube-audio-stream"></script>
 
 		<!-- Add container for 3d model -->
 		<div id="threejs-container" class="w-full h-full"></div>
 
 		<div class="fixed top-2 right-2 z-100 flex flex-col items-end">
-			<img src="/color-wheel.svg" id="color-picker-btn" class="w-10 h-10" />
+			<div class="flex flex-row gap-2 justify-center items-center">
+				<img src="/emoji.png" id="play-audio-btn" class="w-8 h-8" />
+				<img src="/color-wheel.svg" id="color-picker-btn" class="w-10 h-10" />
+			</div>
+
 			<div id="color-selector-modal" class="border border-[#012622] text-[#012622] gap-x-2 px-4 py-2 bg-white grid grid-cols-[150px_auto] items-center font-mono text-sm">
 				<label for="icing-color">Icing color</label>
 				<input id="icing-color" type="color" />

@@ -1,6 +1,7 @@
 import { PointLight } from "three";
 import { scene } from "../scenes/cake";
 import { mesh } from "./constants";
+import { stopHappyBdayAudio, playYay } from "./play-audio";
 
 let volumeInterval;
 
@@ -16,6 +17,9 @@ function handleBlowCandle() {
       child.intensity = 0;
     }
   }); 
+
+  stopHappyBdayAudio();
+  playYay();
 
   clearInterval(volumeInterval); // Stop listening for volume change
 }
@@ -41,7 +45,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
       }
       console.log(amp);
 
-      if (amp > 3000) {
+      if (amp > 2700) {
         console.log("Blow candle")
         handleBlowCandle();
       }
