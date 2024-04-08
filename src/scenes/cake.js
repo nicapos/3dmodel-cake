@@ -42,6 +42,13 @@ scene.add( spotLight );
 
 // scene.add(new THREE.DirectionalLightHelper(spotLight, 1));
 
+// Create a base for the cake
+const baseCylinder = new THREE.CylinderGeometry(1.4, 1.4, 0.1, 32);
+const baseMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff, flatShading: true });
+const baseMesh = new THREE.Mesh(baseCylinder, baseMaterial);
+baseMesh.position.y = -0.6;
+scene.add(baseMesh);
+
 // Instantiate a loader
 const loader = new GLTFLoader();
 
@@ -52,8 +59,7 @@ const onResourceLoad = (gltf) => {
       if (child.isMesh) {
           // Check if the mesh has a specific material name or any other condition
           if (child.material.name == mesh.icing.top || child.material.name == mesh.icing.bottom) {
-              // child.material.color.set(0xff0000);
-              child.material.metalness = 0.3;
+              child.material.metalness = 0.4;
           }
       }
   });

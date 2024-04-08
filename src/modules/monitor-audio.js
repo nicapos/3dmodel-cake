@@ -42,7 +42,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
       console.log(amp);
 
       if (amp > 3000) {
-        console.log("dapat nag blow")
+        console.log("Blow candle")
         handleBlowCandle();
       }
     }
