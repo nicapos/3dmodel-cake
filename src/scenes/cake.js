@@ -18,9 +18,20 @@ const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
 directionalLight1.position.set(1, 1, 1);
 scene.add(directionalLight1);
 
-const directionalLight2 = new THREE.DirectionalLight(0xffffff, 1);
-directionalLight2.position.set(-1, -1, -1);
-scene.add(directionalLight2);
+// Create a point light (candle light)
+const pointLight = new THREE.PointLight(0xffaaaa, 1, 100);
+pointLight.position.set(0, 2, 0);
+pointLight.name = "candleLight";
+pointLight.castShadow = true;
+scene.add(pointLight);
+
+const spotLight = new THREE.SpotLight( 0xff8888, 100 );
+spotLight.angle = Math.PI / -4;
+spotLight.penumbra = 0.3;
+spotLight.position.set( 0, 10, 5 );
+spotLight.castShadow = true;
+spotLight.shadow.radius = 10;
+scene.add( spotLight );
 
 // Add light helpers to visualize light sources (temp)
 // const directionalLightHelper1 = new THREE.DirectionalLightHelper(directionalLight1, 1); // Second parameter is size of the helper
@@ -28,6 +39,8 @@ scene.add(directionalLight2);
 
 // const directionalLightHelper2 = new THREE.DirectionalLightHelper(directionalLight2, 1); // Second parameter is size of the helper
 // scene.add(directionalLightHelper2);
+
+// scene.add(new THREE.DirectionalLightHelper(spotLight, 1));
 
 // Instantiate a loader
 const loader = new GLTFLoader();
