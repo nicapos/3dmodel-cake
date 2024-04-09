@@ -1,6 +1,8 @@
-# 3DMODEL Final Project Title
+# 3D Cake
 
-Add a project description here later on.
+An interactive birthday cake screensaver where users can customize their own cake. Once activated, a virtual birthday cake with lit candles appears on the screen. Users can blow into their device's microphone to simulate blowing out the candles, which will then extinguish accordingly on the screen.
+
+This project was submitted as a requirement for an elective on 3D Modeling and Animation (3DMODEL).
 
 ## Getting Started
 
